@@ -39,5 +39,5 @@ publish {
     artifactId = 'explicitarchitecture-posts-infrastructure-retrofit'
     publishVersion = '0.0.1'
     desc = 'An example infrastructure implementation.'
-    website = 'https://github.com/RobinNunkesser/explicitarchitecture-bintray'
+    website = 'https://github.com/RobinNunkesser/explicitarchitecture-posts-infrastructure-bintray'
 }
