@@ -1,0 +1,43 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.9.2'
+    }
+}
+
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm' version '1.4.10'
+}
+
+group 'de.hshl.isd'
+version '0.0.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation "com.squareup.retrofit2:retrofit:2.6.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.6.0"
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+apply plugin: 'com.novoda.bintray-release'
+
+publish {
+    userOrg = 'robinnunkesser'
+    groupId = 'de.hshl.isd'
+    artifactId = 'explicitarchitecture-posts-infrastructure-retrofit'
+    publishVersion = '0.0.1'
+    desc = 'An example infrastructure implementation.'
+    website = 'https://github.com/RobinNunkesser/explicitarchitecture-bintray'
+}
