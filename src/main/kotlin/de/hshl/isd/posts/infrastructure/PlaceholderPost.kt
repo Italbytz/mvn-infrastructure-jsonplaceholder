@@ -1,4 +1,4 @@
-package de.hshl.isd.placeholderposts.infrastructure
+package de.hshl.isd.posts.infrastructure
 
 /*
  * Represents a post from https://jsonplaceholder.typicode.com/posts/1

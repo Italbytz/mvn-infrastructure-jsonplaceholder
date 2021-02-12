@@ -1,4 +1,4 @@
-package de.hshl.isd.placeholderposts.infrastructure
+package de.hshl.isd.posts.infrastructure
 
 import retrofit2.Call
 import retrofit2.Retrofit

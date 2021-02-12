@@ -13,7 +13,7 @@ plugins {
 }
 
 group 'de.hshl.isd'
-version '0.0.1'
+version '0.0.2'
 
 repositories {
     mavenCentral()
@@ -37,7 +37,7 @@ publish {
     userOrg = 'robinnunkesser'
     groupId = 'de.hshl.isd'
     artifactId = 'explicitarchitecture-posts-infrastructure-retrofit'
-    publishVersion = '0.0.1'
+    publishVersion = '0.0.2'
     desc = 'An example infrastructure implementation.'
     website = 'https://github.com/RobinNunkesser/explicitarchitecture-posts-infrastructure-bintray'
 }
