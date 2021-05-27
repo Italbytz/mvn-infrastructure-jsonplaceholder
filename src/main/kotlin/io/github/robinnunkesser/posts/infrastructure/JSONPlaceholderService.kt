@@ -1,4 +1,4 @@
-package de.hshl.isd.posts.infrastructure
+package io.github.robinnunkesser.posts.infrastructure
 
 import retrofit2.Call
 import retrofit2.Retrofit

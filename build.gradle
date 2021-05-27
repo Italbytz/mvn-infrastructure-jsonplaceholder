@@ -1,19 +1,7 @@
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.novoda:bintray-release:0.9.2'
-    }
-}
-
 plugins {
     id 'java'
     id 'org.jetbrains.kotlin.jvm' version '1.4.10'
 }
-
-group 'de.hshl.isd'
-version '0.0.2'
 
 repositories {
     mavenCentral()
@@ -31,13 +19,71 @@ test {
     useJUnitPlatform()
 }
 
-apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'maven'
+apply plugin: 'signing'
 
-publish {
-    userOrg = 'robinnunkesser'
-    groupId = 'de.hshl.isd'
-    artifactId = 'explicitarchitecture-posts-infrastructure-retrofit'
-    publishVersion = '0.0.2'
-    desc = 'An example infrastructure implementation.'
-    website = 'https://github.com/RobinNunkesser/explicitarchitecture-posts-infrastructure-bintray'
+task javadocJar(type: Jar) {
+    classifier = 'javadoc'
+    from javadoc
 }
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives javadocJar, sourcesJar
+}
+
+signing {
+    sign configurations.archives
+}
+
+group = "io.github.robinnunkesser"
+archivesBaseName = "explicitarchitecture-posts-infrastructure-retrofit"
+version = "0.1.0"
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+            repository(url: "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            snapshotRepository(url: "https://s01.oss.sonatype.org/content/repositories/snapshots/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            pom.project {
+                name 'Explicit Architecture Posts Infrastructure'
+                packaging 'jar'
+                description 'An example infrastructure implementation.'
+                url 'https://github.com/RobinNunkesser/explicitarchitecture-posts-infrastructure-mvn'
+
+                scm {
+                    connection 'scm:git:git://github.com/RobinNunkesser/explicitarchitecture-posts-infrastructure-mvn.git'
+                    developerConnection 'scm:git:ssh://github.com/RobinNunkesser/explicitarchitecture-posts-infrastructure-mvn.git'
+                    url 'https://github.com/RobinNunkesser/explicitarchitecture-posts-infrastructure-mvn.git'
+                }
+
+                licenses {
+                    license {
+                        name 'The Apache License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        name 'Robin Nunkesser'
+                        email 'robin.nunkesser@hshl.de'
+                    }
+                }
+            }
+        }
+    }
+}
+
