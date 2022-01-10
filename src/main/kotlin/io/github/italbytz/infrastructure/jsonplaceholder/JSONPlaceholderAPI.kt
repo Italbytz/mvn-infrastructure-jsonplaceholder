@@ -1,4 +1,4 @@
-package io.github.robinnunkesser.posts.infrastructure
+package io.github.italbytz.infrastructure.jsonplaceholder
 
 import retrofit2.Call
 import retrofit2.http.*

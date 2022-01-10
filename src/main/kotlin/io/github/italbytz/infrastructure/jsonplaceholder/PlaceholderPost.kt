@@ -1,4 +1,4 @@
-package io.github.robinnunkesser.posts.infrastructure
+package io.github.italbytz.infrastructure.jsonplaceholder
 
 /*
  * Represents a post from https://jsonplaceholder.typicode.com/posts/1

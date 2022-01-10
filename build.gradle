@@ -40,8 +40,8 @@ signing {
     sign configurations.archives
 }
 
-group = "io.github.robinnunkesser"
-archivesBaseName = "explicitarchitecture-posts-infrastructure-retrofit"
+group = "io.github.italbytz.infrastructure"
+archivesBaseName = "jsonplaceholder"
 version = "0.1.0"
 
 uploadArchives {
@@ -58,15 +58,15 @@ uploadArchives {
             }
 
             pom.project {
-                name 'Explicit Architecture Posts Infrastructure'
+                name '{JSON} Placeholder Infrastructure'
                 packaging 'jar'
                 description 'An example infrastructure implementation.'
-                url 'https://github.com/RobinNunkesser/explicitarchitecture-posts-infrastructure-mvn'
+                url 'https://github.com/Italbytz/mvn-infrastructure-jsonplaceholder'
 
                 scm {
-                    connection 'scm:git:git://github.com/RobinNunkesser/explicitarchitecture-posts-infrastructure-mvn.git'
-                    developerConnection 'scm:git:ssh://github.com/RobinNunkesser/explicitarchitecture-posts-infrastructure-mvn.git'
-                    url 'https://github.com/RobinNunkesser/explicitarchitecture-posts-infrastructure-mvn.git'
+                    connection 'scm:git:git://github.com/Italbytz/mvn-infrastructure-jsonplaceholder.git'
+                    developerConnection 'scm:git:ssh://github.com/Italbytz/mvn-infrastructure-jsonplaceholder.git'
+                    url 'https://github.com/Italbytz/mvn-infrastructure-jsonplaceholder.git'
                 }
 
                 licenses {
