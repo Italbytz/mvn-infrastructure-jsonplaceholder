@@ -42,7 +42,8 @@ interface JSONPlaceholderAPI {
      * @return The updated post.
      */
     @PUT("posts/{id}")
-    fun updatePost(@Path("id") id: Long, @Body post: PlaceholderPost): Call<PlaceholderPost>
+    fun updatePost(@Path("id") id: Long, @Body post: PlaceholderPost):
+            Call<PlaceholderPost>
 
     /**
      * Deletes a post.

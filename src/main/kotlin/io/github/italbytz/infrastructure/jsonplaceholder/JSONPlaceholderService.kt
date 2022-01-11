@@ -11,15 +11,21 @@ class JSONPlaceholderService : JSONPlaceholderAPI {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-    var service: JSONPlaceholderAPI = retrofit.create(JSONPlaceholderAPI::class.java)
+    var service: JSONPlaceholderAPI =
+        retrofit.create(JSONPlaceholderAPI::class.java)
 
-    override fun readPost(id: Long): Call<PlaceholderPost> = service.readPost(id)
+    override fun readPost(id: Long): Call<PlaceholderPost> =
+        service.readPost(id)
 
-    override fun readAllPosts(): Call<List<PlaceholderPost>> = service.readAllPosts()
+    override fun readAllPosts(): Call<List<PlaceholderPost>> =
+        service.readAllPosts()
 
-    override fun createPost(post: PlaceholderPost): Call<PlaceholderPost> = service.createPost(post)
+    override fun createPost(post: PlaceholderPost): Call<PlaceholderPost> =
+        service.createPost(post)
 
-    override fun updatePost(id: Long, post: PlaceholderPost): Call<PlaceholderPost> = service.updatePost(id, post)
+    override fun updatePost(id: Long, post: PlaceholderPost): Call<PlaceholderPost> =
+        service.updatePost(id, post)
 
-    override fun deletePost(id: Long): Call<Void> = service.deletePost(id)
+    override fun deletePost(id: Long): Call<Void> =
+        service.deletePost(id)
 }
